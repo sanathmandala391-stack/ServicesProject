@@ -38,14 +38,14 @@ public class PaymentService {
     //    Run: ngrok http 5173
     //    Copy the https URL e.g: https://abc123.ngrok-free.app
     // ════════════════════════════════════════════════════
-    private static final String FRONTEND_URL  = "http://localhost:5173";
+    private static final String FRONTEND_URL  = "https://frontend-serve-ease-mtnc.vercel.app";
 
     // ════════════════════════════════════════════════════
     // ✅ STEP 2: Paste your ngrok BACKEND URL here
     //    Run: ngrok http 8080
     //    Copy the https URL e.g: https://xyz789.ngrok-free.app
     // ════════════════════════════════════════════════════
-    private static final String BACKEND_URL   = "http://localhost:8080";
+    private static final String BACKEND_URL   = "https://servicesproject-2.onrender.com";
 
     @Value("${spring.mail.username}")
     private String fromEmail;
