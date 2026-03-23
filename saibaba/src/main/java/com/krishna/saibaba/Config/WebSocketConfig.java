@@ -19,10 +19,15 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         // ✅ Native WebSocket endpoint (no SockJS — avoids deprecation warning)
         registry.addEndpoint("/ws-location")
                 .setAllowedOriginPatterns("*");
+        
 
         // ✅ SockJS fallback for older browsers
         registry.addEndpoint("/ws-location-sockjs")
-                .setAllowedOriginPatterns("*")
+                // .setAllowedOriginPatterns("*")
+            .setAllowedOrigins(
+                "http://localhost:5173", 
+                "https://frontend-serve-ease-mtnc.vercel.app" // Add your production URL
+            )
                 .withSockJS();
     }
 }
