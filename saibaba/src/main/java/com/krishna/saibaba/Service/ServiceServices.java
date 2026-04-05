@@ -12,17 +12,16 @@ public class ServiceServices {
     @Autowired
     private ServiceRepo serviceRepo;
 
-
-    public void AddService(com.krishna.saibaba.Model.Service service) {
+    public void AddService(Service service) {
         serviceRepo.save(service);
     }
 
-    public java.util.List<Service> saveAll(java.util.List<Service> services) {
-    return serviceRepository.saveAll(services);
-}
+    public List<Service> saveAll(List<Service> services) {
+        return serviceRepo.saveAll(services); // ✅ FIXED
+    }
 
     public ResponseEntity<?> GetAllServices() {
-       return  ResponseEntity.ok().body(serviceRepo.findAll());
+        return ResponseEntity.ok().body(serviceRepo.findAll());
     }
 
     public ResponseEntity<?> GetServiceById(Integer id) {
