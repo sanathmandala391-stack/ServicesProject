@@ -16,6 +16,12 @@ public class ServiceController {
     @Autowired
     private ServiceServices serviceServices;
 
+@PostMapping("/addAllServices")
+public ResponseEntity<?> addAllServices(@RequestBody java.util.List<Service> services) {
+    return ResponseEntity.ok(serviceServices.saveAll(services));
+}
+    
+
     @PostMapping("/add-Service")
     public ResponseEntity<String> AddService(
 
