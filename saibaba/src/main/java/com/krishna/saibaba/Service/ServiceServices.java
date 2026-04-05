@@ -17,6 +17,10 @@ public class ServiceServices {
         serviceRepo.save(service);
     }
 
+    public java.util.List<Service> saveAll(java.util.List<Service> services) {
+    return serviceRepository.saveAll(services);
+}
+
     public ResponseEntity<?> GetAllServices() {
        return  ResponseEntity.ok().body(serviceRepo.findAll());
     }
